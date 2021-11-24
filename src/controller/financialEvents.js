@@ -21,13 +21,13 @@ const financialEvents = async (req, res) => {
 
      const result = await services.financialEvents({ id: user.id, value, type })
      
-         if (result?.error && result?.error === 'invalid body') {
+    if (result?.error && result?.error === 'invalid body') {
       return res.sendStatus(400);
     }
       
     res.sendStatus(201);
    } catch (err) {
-     console.log(err)
+
     res.sendStatus(500);
   }
 }
